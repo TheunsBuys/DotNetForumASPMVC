@@ -1,0 +1,11 @@
+﻿@model SimpleSample.Models.CandidateViewModel
+
+<div class="row">
+    @using (Html.BeginForm("Update", "Candidate", FormMethod.Post))
+    {
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 form-group">
+            @Html.LabelFor(x => x.FirstName, new { @class = "col-md-5 control-label" })
+            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        </div>
+    }
+</div>
