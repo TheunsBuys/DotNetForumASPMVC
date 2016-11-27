@@ -1,0 +1,43 @@
+
+Bundling and minification are two techniques you can use in ASP.NET 4.5 to improve request load time.  
+
+Bundling improves load time by reducing the number of requests to the server and
+- combines multiple file into one
+- can have multiple bundles
+
+Minification reduces the payload size of requested assets to clients 
+- removes whitespace
+- JS Minification
+	- variable replacements and reduction in actual script characters
+- CSS Bundling
+
+ScriptBundles and Style Bundles
+
+Enabling/Disabling
+	<compilation debug="true"> - typical setting in web.config
+
+	OR 
+
+	BundleTable.EnableOptimizations = true/false;
+	- Production ~ true
+	- < Production ~ false (makes debugging easier)
+
+Wildcards 
+- when adding files from a directory, use the '*' wildcard but ONLY
+  as a prefix or suffix only 
+
+What about LESS, SCSS and others
+- some are supported eg dotless
+
+Tips
+- file paths are important - check them
+- make sure your bundle name and path does NOT correspond to an actual path 
+	- trips up happen mainly in production
+- 
+
+
+
+
+
+ 
+https://www.asp.net/mvc/overview/performance/bundling-and-minification
