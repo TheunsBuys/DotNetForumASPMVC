@@ -172,6 +172,7 @@
     <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResultTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +237,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\ResultTypes\file.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -274,6 +276,9 @@
     <Content Include="Views\Candidate\Detail.cshtml" />
     <Content Include="Views\Candidate\index.cshtml" />
     <Content Include="Views\Candidate\_LastApplication.cshtml" />
+    <Content Include="Views\ResultTypes\ViewResult.cshtml" />
+    <Content Include="Views\ResultTypes\PartialViewResult.cshtml" />
+    <Content Include="Views\ResultTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
