@@ -6,8 +6,15 @@ using System.Web.Mvc;
 
 namespace SimpleSample.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller, IDisposable
     {
+        public HomeController()
+        {
+            if (true)
+            {
+
+            }
+        }
         public ActionResult Index()
         {
             return View();
@@ -25,6 +32,11 @@ namespace SimpleSample.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
     }
 }
