@@ -1,11 +1,9 @@
-﻿using SimpleSample.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using MakingItPretty.Models;
 
-namespace SimpleSample.Controllers
+namespace MakingItPretty.Controllers
 {
     [RoutePrefix("Candidate"), Route("{action=index}/{id?}")]
     public class CandidateController : Controller
@@ -34,18 +32,27 @@ namespace SimpleSample.Controllers
                 FirstName = "Koos",
                 LastName = "Venter",
                 Email = "koos@yahoo.com",
+                LastApplication = new Application()
+                                  {
+                                      ApplicationDate = new DateTime(2016,11,11),
+                                      JobReference = "ENT001"
+        
+                                  }
             };
-            return PartialView("_CandidateDetail", model);
+            return View( model);
         }
 
-        [HttpPost]
-        public ActionResult Update (CandidateViewModel candidate)
+        [HttpGet]
+        [ChildActionOnly]
+        public PartialViewResult CandidateAdress(int id)
         {
-            if ( candidate?.FirstName != null)
+            var model = new CandidateAddressViewModel
             {
-
-            }
-            return RedirectToAction(nameof(Index));
+                AddressLine1 = "13 Corlett Drive",
+                AddressLine2 = "Melrose",
+                City = "Johannesburg",
+            };
+            return PartialView("_CandidateAdress",model);
         }
     }
 }

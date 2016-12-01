@@ -1,0 +1,12 @@
+Making your app pretty
+
+Options
+- Bootstrap
+- Foundation
+- Plain old CSS
+
+How?
+- Nuget
+- Bower (VS 2015 support for bower)
+
+
