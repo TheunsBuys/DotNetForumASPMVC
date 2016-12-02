@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-using System.Web.Script.Serialization;
+﻿using System.Web.Mvc;
 
 namespace MakingItPretty.Controllers
 {
@@ -66,7 +60,7 @@ namespace MakingItPretty.Controllers
 
         public FileResult FileResult()
         {
-            return File("file.txt", "text/plain");
+            return File(Server.MapPath("~/file.txt"), "application/octet-stream");
         }
 
         public EmptyResult EmptyResultAction()

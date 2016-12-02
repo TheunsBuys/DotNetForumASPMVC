@@ -80,8 +80,10 @@
     <div class="large-6 columns">
         <h3>Html.Partial</h3>
         <hr/>
-        @Html.Partial("_LastApplication", Model.LastApplication)
-
+        @{
+            var html = Html.Partial("_LastApplication", Model.LastApplication);
+        }
+        @html
         <em>
             <ul>
                 <li>

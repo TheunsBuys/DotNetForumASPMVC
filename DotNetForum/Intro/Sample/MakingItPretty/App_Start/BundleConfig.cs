@@ -74,7 +74,7 @@ namespace MakingItPretty
            "~/Scripts/foundation/app.js"));
             #endregion
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
