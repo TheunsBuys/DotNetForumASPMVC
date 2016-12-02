@@ -37,5 +37,15 @@ namespace SimpleSample.Controllers
             };
             return PartialView("_CandidateDetail", model);
         }
+
+        [HttpPost]
+        public ActionResult Update (CandidateViewModel candidate)
+        {
+            if ( candidate?.FirstName != null)
+            {
+
+            }
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
