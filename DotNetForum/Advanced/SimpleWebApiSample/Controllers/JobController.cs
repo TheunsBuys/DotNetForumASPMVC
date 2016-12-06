@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Description;
 using SimpleWebApiSample.Models;
 
 namespace SimpleWebApiSample.Controllers
@@ -7,9 +8,10 @@ namespace SimpleWebApiSample.Controllers
     public class JobController : ApiController
     {
         // GET: api/Job
-        public IEnumerable<JobDto> Get()
+        [ResponseType(typeof(IEnumerable<JobDto>))]
+        public IHttpActionResult Get()
         {
-            return new List<JobDto>
+            var jobsList = new List<JobDto>
             {
                 new JobDto
                 {
@@ -24,6 +26,7 @@ namespace SimpleWebApiSample.Controllers
                     Location = "Durban"
                 }
             };
+            return Ok(jobsList);
         }
 
         // GET: api/Job/5

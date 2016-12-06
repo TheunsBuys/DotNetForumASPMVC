@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using SimpleWebApiSample.Attributes;
 
 namespace SimpleWebApiSample
@@ -21,7 +23,13 @@ namespace SimpleWebApiSample
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            //config.Filters.Add(new ValidateModelAttribute()); //The validation attribute can be applied to all web requests.
+            //The response formatting can be applied to all web requests and responses.
+            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
+
+            //config.Filters.Add(new ValidateModelAttribute()); 
+            //The validation attribute can be applied to all web requests.
         }
     }
 }
