@@ -24,9 +24,9 @@ namespace SimpleWebApiSample
             );
 
             //The response formatting can be applied to all web requests and responses.
-            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
-            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
-                new CamelCasePropertyNamesContractResolver();
+            //config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+            //config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+            //    new CamelCasePropertyNamesContractResolver();
 
             //config.Filters.Add(new ValidateModelAttribute()); 
             //The validation attribute can be applied to all web requests.
