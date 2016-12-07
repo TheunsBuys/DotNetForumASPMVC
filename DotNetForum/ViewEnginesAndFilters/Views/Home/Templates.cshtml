@@ -1,0 +1,46 @@
+﻿@model WebApplication1.Controllers.BooleanViewModel
+
+@{
+    ViewBag.Title = "Templates";
+}
+
+<h2>Templates</h2>
+
+<div>
+    <h4>Boolean View Model with Editor and Display Templates</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelWithoutValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelWithoutValue)
+            @Html.EditorFor(model => model.ModelWithoutValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelWithValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelWithValue)
+            @Html.EditorFor(model => model.ModelWithValue)
+        </dd>
+        
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultModelWithValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultModelWithValue)
+            @Html.EditorFor(model => model.DefaultModelWithValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

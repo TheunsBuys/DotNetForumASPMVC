@@ -1,0 +1,58 @@
+﻿@model ModelBinding.Models.ApplicationsListViewModel
+
+@{
+    ViewBag.Title = "CreateList";
+}
+
+<h2>Create List</h2>
+
+<p>
+    <h3>Good</h3>
+    @using (Html.BeginForm("CreateList", "ModelBinding"))
+    {
+
+        <ul>
+            @for (int i = 0; i < Model.Applications.Count(); ++i)
+            {
+                <li>
+                    @Html.HiddenFor(m => m.Applications[i].JobId)
+                    @Html.EditorFor(m => m.Applications[i].CandidateId)
+                    @Html.EditorFor(m => m.Applications[i].CandidateName)
+                    @Html.EditorFor(m => m.Applications[i].JobName)
+                </li>
+            }
+        </ul>
+        <input type="submit" value="Create"/>
+    }
+</p>
+
+<p>
+    <h3>Bad</h3>
+
+    @using (Html.BeginForm("CreateList", "ModelBinding"))
+    {
+
+        <ul>
+            @foreach (var item in Model.Applications)
+            {
+                <li>
+                    @Html.HiddenFor(m => item.JobId)
+                    @Html.EditorFor(m => item.CandidateId)
+                    @Html.EditorFor(m => item.CandidateName)
+                    @Html.EditorFor(m => item.JobName)
+                </li>
+
+            }
+        </ul>
+        <input type="submit" value="Create"/>
+    }
+
+</p>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
