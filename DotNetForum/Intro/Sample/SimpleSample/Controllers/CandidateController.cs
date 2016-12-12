@@ -41,6 +41,7 @@ namespace SimpleSample.Controllers
         [HttpPost]
         public ActionResult Update (CandidateViewModel candidate)
         {
+            
             if ( candidate?.FirstName != null)
             {
 
