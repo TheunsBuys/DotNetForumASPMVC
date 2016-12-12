@@ -1,0 +1,85 @@
+﻿@model MakingItPretty.Models.JobViewModel
+
+@{
+    ViewBag.Title = "ApplyForJob";
+}
+
+
+
+<div>
+
+  
+    <div class="row">
+        <div class="large-12">
+            <h2>Apply For Job - @Model.JobTitle</h2>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Jobid)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Jobid)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.JobTitle)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.JobTitle)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.JobDescription)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.JobDescription)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.SalaryRange)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.SalaryRange)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Location)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Location)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+   
+</div>
+
+<div class="row">
+    <div class="large-12">
+        
+        <p>
+        
+            @using (Html.BeginForm("ApplyForJob","JobApplication",FormMethod.Post))
+            {
+                @Html.Hidden("CandidateId",23)
+                @Html.Hidden("JobId",3)
+
+                <label> Availability</label>
+                <input name="Availabilty" type="number" />
+                <button type="submit">Apply For Job</button>
+            }
+        
+        </p>
+        <p>
+            @Html.ActionLink("Edit (no action)", "Edit", new {/* id = Model.PrimaryKey */}) |
+            @Html.ActionLink("Back to List (error)", "Index")
+        </p>
+
+    </div>
+</div>
+

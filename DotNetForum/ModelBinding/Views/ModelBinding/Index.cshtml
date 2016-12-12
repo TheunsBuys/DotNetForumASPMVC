@@ -1,0 +1,95 @@
+﻿@model ModelBinding.Models.ApplicationsListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    var first = Model.Applications.FirstOrDefault();
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateApplication")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            JobId
+        </th>
+        <th>
+            CandidateId
+        </th>
+        <th>
+            CandidateName
+        </th>
+        <th>
+            Job Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => first.DateApplied)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var application in Model.Applications) {
+    <tr>
+        <td>
+        @Html.DisplayFor(modelItem => application.JobId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => application.CandidateId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => application.CandidateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => application.JobName)
+        </td>
+        <td>
+            @application.DateApplied.ToShortDateString()
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+@using (Html.BeginForm("CreateList", "ModelBinding"))
+{
+
+    <ul>
+        @for (int i = 0; i < Model.Applications.Count(); ++i)
+        {
+            <li>
+                @Html.HiddenFor(m => m.Applications[i].JobId)
+                @Html.EditorFor(m => m.Applications[i].CandidateId)
+                @Html.EditorFor(m => m.Applications[i].CandidateName)
+                @Html.EditorFor(m => m.Applications[i].JobName)
+            </li>
+        }
+    </ul>
+    <input type="submit" value="Create" class="btn btn-default" />
+}
+
+
+@using (Html.BeginForm("CreateList", "ModelBinding"))
+{
+
+    <ul>
+        @foreach(var item in Model.Applications)
+        {
+            <li>
+                @Html.HiddenFor(m => item.JobId)
+                @Html.EditorFor(m => item.CandidateId)
+                @Html.EditorFor(m => item.CandidateName)
+                @Html.EditorFor(m => item.JobName)
+            </li>
+            
+        }
+    </ul>
+    <input type="submit" value="Create" class="btn btn-default" />
+}

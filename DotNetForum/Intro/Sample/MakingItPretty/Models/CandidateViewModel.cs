@@ -30,5 +30,4 @@ namespace MakingItPretty.Models
         public string AddressLine2 { get; set; }
         public string City { get; set; }
     }
-
 }

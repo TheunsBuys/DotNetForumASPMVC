@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/foundation/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="contain-to-grid">
+        <div class="top-bar">
+            <div class="top-bar-section">
+                <ul class="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+<!-- container -->
+<div class="container">
+
+    <div class="row">
+        <section class="large-12 columns">
+            <h2>Welcome to Foundation</h2>
+            <p>This is a really simple 2-column layout.</p>
+        </section>
+    </div>
+
+    <div class="row">
+        <div class="large-12 columns">
+            @RenderBody()
+        </div>
+        @*<div class="large-4 columns">
+                <H3> Some content on the side</H3>
+                @RenderSection("aside", required: false)
+            </div>*@
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="large-12 columns">
+            <h6><strong>Made by ZURB</strong></h6>
+            <p>Foundation is made by <a href="http://www.zurb.com/">ZURB</a>, an <a href="http://www.zurb.com/words/design-process">interaction design and strategy company</a> located in Campbell, California. We've put over 10 years of experience building web products, services and websites into this framework. <a href="../about.php">Foundation Info and Goodies →</a>
+            </p>
+            <p>Let us know how you're using Foundation and we might feature you as an example! <a href="mailto:foundation@zurb.com?subject=I'm%20using%20Foundation">Get in touch →</a>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+<!-- container -->
+
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/foundation")
+<script>
+    $(document).foundation();
+</script>
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

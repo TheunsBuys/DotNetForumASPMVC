@@ -1,0 +1,56 @@
+@model bool?
+
+@{
+    var isTwoState = ViewData.ContainsKey("twostate");
+
+    // make use of MVC4 nullable class attribute values
+    var yesSelected = Model.HasValue && Model.Value ? "active" : null;
+    var noSelected = Model.HasValue && !Model.Value ? "active" : null;
+    var noSelection = !Model.HasValue ? "active" : null;
+
+    var yesSelectedText = ViewData.ContainsKey("yesSelected") ? ViewData["yesSelected"] : "Yes";
+    var noSelectedText = ViewData.ContainsKey("noSelected") ? ViewData["noSelected"] : "No";
+    var nullableSelectedText = ViewData.ContainsKey("noSelection") ? ViewData["noSelection"] : "Not Set";
+
+    // get the name of the ID - this is to support multiple fields     
+    var htmlField = ViewData.TemplateInfo.GetFullHtmlFieldId(string.Empty);
+}
+
+@Html.Hidden("", ViewData.TemplateInfo.FormattedModelValue, ViewData)
+
+<table >
+    <tr>
+        <td>
+            @*<div class="btn-group radio-toggle" data-toggle="buttons-radio">
+                <button type="button" class="btn btn-primary @yesSelected bool-@htmlField" onclick="javascript:$('#@htmlField').val(true);">@yesSelectedText</button>
+                <button type="button" class="btn btn-primary @noSelected bool-@htmlField" onclick="javascript:$('#@htmlField').val(false);">@noSelectedText</button>
+
+                @if (ViewData.ModelMetadata.IsNullableValueType && !isTwoState)
+                { <button type="button" class="btn btn-primary blue @noSelection bool-@htmlField" onclick="javascript:$('#@htmlField').val('');">@nullableSelectedText</button> }
+
+            </div>*@
+
+        </td>
+        <td>
+
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary @yesSelected">
+                    <input type="radio" name="htmlField" id="option1"> @yesSelectedText
+                </label>
+                <label class="btn btn-primary @noSelected">
+                    <input type="radio" name="htmlField" id="option2"> @noSelectedText
+                </label>
+
+                @if (ViewData.ModelMetadata.IsNullableValueType && !isTwoState)
+                {
+                    <label class="btn btn-primary @noSelection">
+                        <input type="radio" name="htmlField" id="option3" > @nullableSelectedText
+                    </label>
+                }
+
+
+            </div>
+  
+        </td>
+    </tr>
+</table>
