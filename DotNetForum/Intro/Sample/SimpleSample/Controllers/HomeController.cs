@@ -17,7 +17,7 @@ namespace SimpleSample.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            return View(nameof(Index));
         }
 
         public ActionResult About()

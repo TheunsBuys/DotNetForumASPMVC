@@ -4,6 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Basic", "00 - Basic", "{4D4420E6-A821-42F4-AF51-2825F5A615D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Advance", "01 - Advance", "{F701EE16-AEF7-45B3-BFFB-AA56020908B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSample", "Intro\Sample\SimpleSample\SimpleSample.csproj", "{9EEC394A-E4C6-43E5-846A-4C18646C0709}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A5638C80-0037-4F7B-95A6-415057FD9923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakingItPretty", "Intro\Sample\MakingItPretty\MakingItPretty.csproj", "{8DFA6296-5373-4B8B-AE56-03FB8C5C3AC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{20B369EC-C0DE-4EC9-B2D5-8A50DD62DFD1}"
 	ProjectSection(SolutionItems) = preProject
 		Basics\01 - History and Background.txt = Basics\01 - History and Background.txt
 		Basics\02 - Project structure.txt = Basics\02 - Project structure.txt
@@ -14,13 +24,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Basic", "00 - Basic", 
 		Basics\07 - Bundling.txt = Basics\07 - Bundling.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Advance", "01 - Advance", "{F701EE16-AEF7-45B3-BFFB-AA56020908B6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Advance (2)", "01 - Advance (2)", "{45E33272-91FA-4D63-AE0E-03E69D7D3140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSample", "Intro\Sample\SimpleSample\SimpleSample.csproj", "{9EEC394A-E4C6-43E5-846A-4C18646C0709}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A5638C80-0037-4F7B-95A6-415057FD9923}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakingItPretty", "Intro\Sample\MakingItPretty\MakingItPretty.csproj", "{8DFA6296-5373-4B8B-AE56-03FB8C5C3AC9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{443E95F2-B367-4067-BF2A-E98949442C7F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBinding", "ModelBinding\ModelBinding.csproj", "{1E10A7EA-1406-4642-A445-7D681476CE6B}"
 EndProject
@@ -68,6 +74,7 @@ Global
 		{9EEC394A-E4C6-43E5-846A-4C18646C0709} = {A5638C80-0037-4F7B-95A6-415057FD9923}
 		{A5638C80-0037-4F7B-95A6-415057FD9923} = {4D4420E6-A821-42F4-AF51-2825F5A615D5}
 		{8DFA6296-5373-4B8B-AE56-03FB8C5C3AC9} = {A5638C80-0037-4F7B-95A6-415057FD9923}
+		{20B369EC-C0DE-4EC9-B2D5-8A50DD62DFD1} = {4D4420E6-A821-42F4-AF51-2825F5A615D5}
 		{1E10A7EA-1406-4642-A445-7D681476CE6B} = {F701EE16-AEF7-45B3-BFFB-AA56020908B6}
 		{0E76C7F2-E041-403E-A084-2FD25AF0B0E5} = {F701EE16-AEF7-45B3-BFFB-AA56020908B6}
 		{ACB2C260-8D30-4A29-9BB7-24A4C6BA0629} = {F701EE16-AEF7-45B3-BFFB-AA56020908B6}
